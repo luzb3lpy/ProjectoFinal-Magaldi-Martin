@@ -1,0 +1,16 @@
+{% extends "Blog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h6>Ingrese apellido de un amigo para buscar:</h6>
+
+<br>
+<form action="/Blog/otrabusqueda/"    method="get">{% csrf_token %}
+    <input type="text" name="apellido" id="apellido">
+    <input type="submit", value="Buscar">
+</form>
+
+
+{% endblock %}

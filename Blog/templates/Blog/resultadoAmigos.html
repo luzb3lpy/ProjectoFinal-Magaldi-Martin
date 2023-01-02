@@ -1,0 +1,19 @@
+{% extends "Blog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    Resultados encontrados:
+    <br>
+    <ol>
+    {%for amigos in apellido%}
+        {{amigos.nombre}}
+        {{amigos.apellido}}
+        <br>
+    
+    {%endfor%}
+    </ol>
+    <a href="{%url 'List2'%}">Regresar</a>
+{% endblock %}

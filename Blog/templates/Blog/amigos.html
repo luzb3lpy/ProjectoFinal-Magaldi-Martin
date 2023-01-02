@@ -1,0 +1,25 @@
+{% extends "Blog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>Amigos</h1>
+    <p>Acá va la info de los Amigos</p>
+
+    <p>
+        Cualquier cosa
+    </p>
+Ingresar datos Amigos:
+<br>
+<form action=""    method="post">{% csrf_token %}
+    <table>
+        {{miFormulario.as_table}}
+    </table>
+    <input type="submit", value="Enviar">
+</form>
+
+
+{% endblock %}

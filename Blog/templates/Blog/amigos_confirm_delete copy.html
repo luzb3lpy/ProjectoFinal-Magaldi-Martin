@@ -1,0 +1,13 @@
+{% extends "Blog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<form method="post">{% csrf_token %}
+    ¿Estás seguro que deseas borrar el familiar "{{object.apellido}}, {{ object.nombre }}"?
+    <br>
+    <br>
+    <input type="submit" value="Eliminar"/>
+</form>
+{% endblock %}

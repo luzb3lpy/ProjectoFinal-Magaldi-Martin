@@ -1,0 +1,29 @@
+{% extends "Blog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h6>Ingrese apellido de un familiar para buscar:</h6>
+
+<br>
+<form action="/Blog/buscar/"    method="get">{% csrf_token %}
+    <input type="text" name="apellido" id="apellido">
+    <input type="submit", value="Buscar">
+</form>
+<br>
+
+<h6>Familiares por apellido y nombre:</h6>
+    <ul>
+        {%for Familiares in object_list%}
+            <p>{{Familiares.apellido}}</p>
+            <p>{{Familiares.nombre}}</p>
+            <p>
+                <a href="{% url 'Detail' Familiares.id %}">Ver</a>
+                <a href="{% url 'Edit' Familiares.id %}">Editar</a>
+                <a href="{% url 'Delete' Familiares.id %}">Borrar</a>   
+            </p>
+        {%endfor%}
+    </ul>    
+
+{% endblock %}

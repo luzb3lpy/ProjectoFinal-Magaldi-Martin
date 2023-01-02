@@ -1,0 +1,16 @@
+{% extends "Blog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+Nombre: {{referidos.nombre}}
+<br>
+Apellido: {{referidos.apellido}}
+<br>
+email: {{referidos.email}}
+<br>
+DNI: {{referidos.dni}}
+<br>
+<a href="{%url 'List3'%}">Regresar</a>
+ 
+{% endblock %}

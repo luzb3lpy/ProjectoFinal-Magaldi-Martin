@@ -1,0 +1,29 @@
+{% extends "Blog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h6>Ingrese apellido de un referido para buscar:</h6>
+
+<br>
+<form action="/Blog/otrabusqueda_2/"    method="get">{% csrf_token %}
+    <input type="text" name="apellido" id="apellido">
+    <input type="submit", value="Buscar">
+</form>
+<br>
+
+<h6>Referidos por apellido y nombre:</h6>    
+    <ul>
+        {%for Referidos in object_list%}
+            <p>{{Referidos.apellido}}</p>
+            <p>{{Referidos.nombre}}</p>
+            <p>
+                <a href="{% url 'Detail3' Referidos.id %}">Ver</a>
+                <a href="{% url 'Edit3' Referidos.id %}">Editar</a>
+                <a href="{% url 'Delete3' Referidos.id %}">Borrar</a>   
+            </p>
+        {%endfor%}
+    </ul>    
+
+{% endblock %}

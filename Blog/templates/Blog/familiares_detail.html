@@ -1,0 +1,16 @@
+{% extends "Blog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+Nombre: {{familiares.nombre}}
+<br>
+Apellido: {{familiares.apellido}}
+<br>
+email: {{familiares.email}}
+<br>
+DNI: {{familiares.dni}}
+<br>
+<a href="{%url 'List'%}">Regresar</a>
+ 
+{% endblock %}
